@@ -1,6 +1,6 @@
 # Deblur-NeRF
 
-This is the repository that contains source code for the [Deblur-NeRF website](https://limacv.github.io/deblurnerf/).
+This is the repository that contains source code for the [Robust-GS website]().
 
 If you find it useful for your work please cite:
 ```
