@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deblur-NeRF">
+  <meta name="keywords" content="Deblur, NeRF, Defocus blur, Motion blur">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deblur-NeRF</title>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Deblur-NeRF: Neural Radiance Fields from Blurry Images</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://limacv.github.io/homepage/">Ma Li</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://xiaoyu258.github.io/">Li Xiaoyu</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://liaojing.github.io/html/">Liao Jing</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://sofienbouaziz.com">Zhang Qi</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://xuanwangvc.github.io/">Wang Xuan</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://juewang725.github.io/">Wang Jue</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cse.ust.hk/~psander/">Pedro V. Sander</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The Hong Kong University of Science and Technology</span>
+            <span class="author-block"><sup>2</sup>Tencent AI Lab</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>3</sup>City University of Hong Kong</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2111.14292"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Arxiv</span>
+                </a>
+              </span>
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://limacv.github.io/deblurnerf/pdf/CVPR2022_DeblurNeRF.pdf"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://limacv.github.io/deblurnerf/pdf/CVPR2022_supple.pdf"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Supple</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/limacv/Deblur-NeRF"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://drive.google.com/drive/folders/1_TkpcJnw504ZOWmgVTD7vWqPdzbk9Wx_?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark"
+                   target="_blank">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop height="100%">
+        <source src="https://limacv.github.io/deblurnerf/images/teaser.mov"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Deblur-NeRF can restore sharp NeRFs from input images with camera motion blur or out-of-focus blur. 
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- This will generate a gallery of videos -->
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop height="100%">
+            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop height="100%">
+            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We propose Deblur-NeRF, the first method that can recover a sharp NeRF from blurry input. 
+            We adopt an analysis-by-synthesis approach that reconstructs blurry views by simulating the 
+            blurring process, thus making NeRF robust to blurry inputs. The core of this simulation is 
+            a novel <b>Deformable Sparse Kernel (DSK)</b> module that models spatially-varying blur kernels by 
+            deforming a canonical sparse kernel at each spatial location. The ray origin of each kernel 
+            point is jointly optimized, inspired by the physical blurring process. This module is 
+            parameterized as an MLP that has the ability to be generalized to various blur types. 
+            Jointly optimizing the NeRF and the DSK module allows us to restore a sharp NeRF. 
+            We demonstrate that our method can be used on both camera motion blur and defocus blur: 
+            the two most common types of blur in real scenes. Evaluation results on both synthetic 
+            and real-world data show that our method outperforms several baselines.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Pipeline. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Pipeline</h2>
+        <div class="pipeline">
+          <img src="https://limacv.github.io/deblurnerf/images/pipeline.png"
+                 class="pipeline image"
+                 alt="pipeline image"/>
+          <!-- <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            When rendering a ray, we first predict N sparse optimized rays based on a 
+            canonical kernel along with their weights. After rendering these rays, 
+            we combine the results to get the blurry pixel. During testing, we can directly 
+            render the rays without kernel deformation resulting in a sharp image.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Pipeline. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">More results</h2>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            We show more deblurring results below. The nearest videos are shown on the bottom right
+            of each clip. Some of the videos shown are from synthetic datasets.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <h2 class="title is-3">Camera Motion Blur</h2>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-blurgirl">
+          <video poster="" id="blurgirl" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/blurgirl.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blurcozyroom">
+          <video poster="" id="blurcozyroom" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/blurcozyroom.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blurdecoration">
+          <video poster="" id="blurdecoration" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/blurdecoration.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blurbasket">
+          <video poster="" id="blurbasket" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/blurbasket.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blurheron">
+          <video poster="" id="blurheron" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/blurheron.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blurpool">
+          <video poster="" id="blurpool" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/blurpool.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blurpuppet">
+          <video poster="" id="blurpuppet" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/blurpuppet.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blurstair">
+          <video poster="" id="blurstair" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/blurstair.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <h2 class="title is-3">Defocus Blur</h2>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-defocuscoral">
+          <video poster="" id="defocuscoral" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/defocuscoral.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-defocuscupcake">
+          <video poster="" id="defocuscupcake" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/defocuscupcake.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-defocusdaisy">
+          <video poster="" id="defocusdaisy" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/defocusdaisy.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-defocuscisco">
+          <video poster="" id="defocuscisco" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/defocuscisco.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-defocusseal">
+          <video poster="" id="defocusseal" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/defocusseal.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-defocustanabata">
+          <video poster="" id="defocustanabata" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/defocustanabata.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-defocustools">
+          <video poster="" id="defocustools" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/defocustools.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-defocuswine">
+          <video poster="" id="defocuswine" autoplay controls muted loop height="100%">
+            <source src="https://limacv.github.io/deblurnerf/images/defocuswine.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <h2 class="title is-3">Object Motion Blur</h2>
+    <div class="container">
+      <div class="item item-blur5grass1">
+        <video poster="" id="blur5grass1" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/blur5grass1.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{ma2021deblur,
+      title   ={Deblur-NeRF: Neural Radiance Fields from Blurry Images},
+      author  ={Ma, Li and Li, Xiaoyu and Liao, Jing and Zhang, Qi and Wang, Xuan and Wang, Jue and Pedro V. Sander},
+      journal ={arXiv preprint arXiv:2111.14292},
+      year    ={2021}
+}
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The source code of this website is borrowed from 
+            <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+          </p>
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/limacv/deblurnerf">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
