@@ -1,4 +1,4 @@
-# Deblur-NeRF
+# Robust-GS
 
 This is the repository that contains source code for the [Robust-GS website](https://nwang43jhu.github.io/robustgs/).
 
