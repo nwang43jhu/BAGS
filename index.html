@@ -35,35 +35,36 @@
           <h1 class="title is-1 publication-title">BAGS: Blur Agnostic Gaussian Splatting through Multi-Scale Kernel Modeling</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://sites.google.com/view/cheng-peng/home">Cheng Peng</a><sup>1</sup>,</span>
+              <a href="https://sites.google.com/view/cheng-peng/home">Cheng Peng</a><sup>1*</sup>,</span>
             <span class="author-block">
-              <a href="https://sites.google.com/view/cheng-peng/home">Cheng Peng</a><sup>1</sup>,</span>
+              <a href="">Yutao Tang</a><sup>1*</sup>,</span>
             <span class="author-block">
-              <a href="https://sites.google.com/view/cheng-peng/home">Cheng Peng</a><sup>1</sup>,
+              <a href="">Yifan Zhou</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://sites.google.com/view/cheng-peng/home">Cheng Peng</a><sup>1</sup>,
+              <a href="">Nengyu Wang</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://sites.google.com/view/cheng-peng/home">Cheng Peng</a><sup>1</sup>,
+              <a href="">Xijun Liu</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://sites.google.com/view/cheng-peng/home">Cheng Peng</a><sup>1</sup>,
+              <a href="">Deming Li</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://sites.google.com/view/cheng-peng/home">Cheng Peng</a><sup>1</sup>
+              <a href="https://engineering.jhu.edu/faculty/rama-chellappa/">Rama Chellappa</a><sup>1</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Johns Hopkins University</span>
+            <span class="author-block"><sup>*</sup>Equal contribution</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2111.14292"
+                <a href="https://arxiv.org/abs/2403.04926"
                    class="external-link button is-normal is-rounded is-dark"
                    target="_blank">
                   <span class="icon">
@@ -74,7 +75,7 @@
               </span>
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://limacv.github.io/deblurnerf/pdf/CVPR2022_DeblurNeRF.pdf"
+                <a href="https://arxiv.org/abs/2403.04926"
                    class="external-link button is-normal is-rounded is-dark"
                    target="_blank">
                   <span class="icon">
@@ -85,7 +86,7 @@
               </span>
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://limacv.github.io/deblurnerf/pdf/CVPR2022_supple.pdf"
+                <a href="https://arxiv.org/abs/2403.04926"
                    class="external-link button is-normal is-rounded is-dark"
                    target="_blank">
                   <span class="icon">
@@ -96,7 +97,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/limacv/Deblur-NeRF"
+                <a href="https://github.com/snldmt/BAGS"
                    class="external-link button is-normal is-rounded is-dark"
                    target="_blank">
                   <span class="icon">
@@ -107,7 +108,7 @@
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://drive.google.com/drive/folders/1_TkpcJnw504ZOWmgVTD7vWqPdzbk9Wx_?usp=sharing"
+                <a href="https://github.com/snldmt/BAGS"
                    class="external-link button is-normal is-rounded is-dark"
                    target="_blank">
                   <span class="icon">
@@ -131,20 +132,25 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-            <div class="video-compare-container" id="statueDiv">
-                <video class="video" id="statue" loop playsinline autoPlay muted src="images/dec_stack.mp4" onplay="resizeAndPlay(this)"></video>
+            <div class="video-compare-container" id="decDiv">
+                <video class="video" id="dec" loop playsinline autoPlay muted src="images/dec_stack.mp4" onplay="resizeAndPlay(this)"></video>
                 
-                <canvas height=0 class="videoMerge" id="statueMerge"></canvas>
+                <canvas height=0 class="videoMerge" id="decMerge"></canvas>
             </div>
-            <div class="video-compare-container" id="scribble2Div">
-              <video class="video" id="scribble2" loop playsinline autoPlay muted src="images/tool_stack.mp4" onplay="resizeAndPlay(this)"></video>
+            <div class="video-compare-container" id="toolDiv">
+              <video class="video" id="tool" loop playsinline autoPlay muted src="images/tool_stack.mp4" onplay="resizeAndPlay(this)"></video>
               
-              <canvas height=0 class="videoMerge" id="scribble2Merge"></canvas>
+              <canvas height=0 class="videoMerge" id="toolMerge"></canvas>
             </div>
-            <div class="video-compare-container" id="scribbleDiv">
-              <video class="video" id="statue" loop playsinline autoPlay muted src="images/garden_stack.mp4" onplay="resizeAndPlay(this)"></video>
+            <div class="video-compare-container" id="gardenDiv">
+              <video class="video" id="garden" loop playsinline autoPlay muted src="images/garden_stack.mp4" onplay="resizeAndPlay(this)"></video>
               
-              <canvas height=0 class="videoMerge" id="scribbleMerge"></canvas>
+              <canvas height=0 class="videoMerge" id="gardenMerge"></canvas>
+            </div>
+            <div class="video-compare-container" id="masonDiv">
+              <video class="video" id="mason" loop playsinline autoPlay muted src="images/mason_stack.mp4" onplay="resizeAndPlay(this)"></video>
+              
+              <canvas height=0 class="videoMerge" id="masonMerge"></canvas>
             </div>
             <!-- <video id="teaser" autoplay muted loop playsinline width="40%">
               <source src="assets/comparison_statue_nerf.mp4"
@@ -153,7 +159,7 @@
       </div>
       </div>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">OCC-NeRF</span> removes the foreground occlusion in a scene, and refines the error-prone camera parameter estimation.
+        <span class="dnerf">BAGS</span> reconstructs scenes in high quality, and remove various image degradation.
       </h2>
     </div>
   </div>
@@ -251,8 +257,7 @@
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p>
-            We show more deblurring results below. The nearest videos are shown on the bottom right
-            of each clip. Some of the videos shown are from synthetic datasets.
+            We show more results below.
           </p>
         </div>
       </div>
