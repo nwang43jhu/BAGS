@@ -137,6 +137,36 @@
   </div>
 </section>
 
+  <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+            <div class="video-compare-container" id="statueDiv">
+                <video class="video" id="statue" loop playsinline autoPlay muted src="images/comparison_statue_ours_nerf.mp4" onplay="resizeAndPlay(this)"></video>
+                
+                <canvas height=0 class="videoMerge" id="statueMerge"></canvas>
+            </div>
+            <div class="video-compare-container" id="scribble2Div">
+              <video class="video" id="scribble2" loop playsinline autoPlay muted src="images/comparison_scribble2_ours_nerf.mp4" onplay="resizeAndPlay(this)"></video>
+              
+              <canvas height=0 class="videoMerge" id="scribble2Merge"></canvas>
+            </div>
+            <!-- <video id="teaser" autoplay muted loop playsinline width="40%">
+              <source src="assets/comparison_statue_nerf.mp4"
+                      type="video/mp4">
+            </video> -->
+      </div>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">OCC-NeRF</span> removes the foreground occlusion in a scene, and refines the error-prone camera parameter estimation.
+      </h2>
+    </div>
+  </div>
+</section>
+
 <!-- This will generate a gallery of videos -->
 <!-- <section class="hero is-light is-small">
   <div class="hero-body">
