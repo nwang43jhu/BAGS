@@ -222,7 +222,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Pipeline</h2>
         <div class="pipeline">
-          <img src="https://limacv.github.io/deblurnerf/images/pipeline.png"
+          <img src="https://nwang43jhu.github.io/robustgs//images/pipeline.png"
                  class="pipeline image"
                  alt="pipeline image"/>
           <!-- <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
@@ -235,10 +235,10 @@
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p>
-            When rendering a ray, we first predict N sparse optimized rays based on a 
-            canonical kernel along with their weights. After rendering these rays, 
-            we combine the results to get the blurry pixel. During testing, we can directly 
-            render the rays without kernel deformation resulting in a sharp image.
+            BAGS is optimized by training a Blur Proposal Network on top of the scene over multiple scales. We extract features from color and depth,
+            which are concatenated with the position and view embedding to form the Multi-Modal Feature (MMF). The kernel MLP then estimates the per-pixel 
+            kernel and mask. We use the kernel to model the blur image and employ the mask to blend the rendered image and the blur-modeled image, 
+            yielding the output image. After multiple steps, we upscale image resolution and modify the kernel MLP to produce a kernel with a larger kernel size.
           </p>
         </div>
       </div>
