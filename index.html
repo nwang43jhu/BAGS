@@ -198,21 +198,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Recent efforts in using 3D Gaussians for scene reconstruction and novel view synthesis can
-            achieve impressive results on curated benchmarks; however, images captured in real life are 
-            often noisy. In this work, we analyze the robustness of Gaussian-Splatting-based methods against 
-            various image degradation, such as motion blur, defocus blur, low resolution, etc. Under these 
-            scenarios, Gaussian-Splatting-based methods overfit to degradation and produce worse results than 
-            Neural-Radiance-Field-based methods. To address this issue, we propose Robust Gaussian Splatting (Robust-GS). 
-            Robust-GS introduces additional 2D modeling capacities such that a 3D-consistent and high quality 
-            scene can be reconstructed despite image-wise artifacts. Specifically, we model image degradation 
-            by estimating per-pixel convolution kernels from a Degradation Proposal Network (DPN). DPN is designed
-            to consider spatial, color, and depth variations of the scene to maximize modeling capacity. Additionally, 
-            DPN also proposes a quality-assessing mask, which indicates observed regions where degradation occurs. 
-            Finally, we introduce a coarse-to-fine kernel optimization scheme; this optimization scheme is fast and 
-            avoids sub-optimal solutions due to sparse point cloud initialization, which often occurs when we apply 
-            Structure-from-Motion from noisy images. We demonstrate that Robust-GS achieves much more photorealistic 
-            renderings under various challenging degradation conditions and significantly improves upon existing approaches.
+            We propose Deblur-NeRF, the first method that can recover a sharp NeRF from blurry input.
           </p>
         </div>
       </div>
