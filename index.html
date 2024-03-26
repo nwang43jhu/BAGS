@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Robust-GS">
+        content="BAGS">
   <meta name="keywords" content="Deblur, Gaussian splatting, Defocus blur, Motion blur, Degradation robust">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BAGS</title>
@@ -15,6 +15,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/index2.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -23,6 +24,49 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
   <script src="./static/js/video_comparison.js"></script>
+  <script src="./static/js/script.js"></script>
+  <style>
+    .hero.teaser {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .container.is-max-desktop {
+      max-width: 1600px;
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+  
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .col-md-8 {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  
+    .video-compare-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.26%; /* 16:9 aspect ratio */
+    }
+  
+    .video,
+    .videoMerge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -64,7 +108,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2403.04926"
+                <a href="https://arxiv.org/pdf/2403.04926.pdf"
                    class="external-link button is-normal is-rounded is-dark"
                    target="_blank">
                   <span class="icon">
@@ -75,7 +119,7 @@
               </span>
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2403.04926"
+                <a href="https://arxiv.org/pdf/2403.04926.pdf"
                    class="external-link button is-normal is-rounded is-dark"
                    target="_blank">
                   <span class="icon">
@@ -86,7 +130,7 @@
               </span>
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2403.04926"
+                <a href="https://arxiv.org/pdf/2403.04926.pdf"
                    class="external-link button is-normal is-rounded is-dark"
                    target="_blank">
                   <span class="icon">
@@ -125,69 +169,28 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
 
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
 
-            <div class="video-compare-container" id="decDiv">
-                <video class="video" id="dec" loop playsinline autoPlay muted src="images/dec_stack.mp4" onplay="resizeAndPlay(this)"></video>
-                
-                <canvas height=0 class="videoMerge" id="decMerge"></canvas>
-            </div>
-            <div class="video-compare-container" id="toolDiv">
-              <video class="video" id="tool" loop playsinline autoPlay muted src="images/tool_stack.mp4" onplay="resizeAndPlay(this)"></video>
-              
-              <canvas height=0 class="videoMerge" id="toolMerge"></canvas>
-            </div>
-            <div class="video-compare-container" id="gardenDiv">
-              <video class="video" id="garden" loop playsinline autoPlay muted src="images/garden_stack.mp4" onplay="resizeAndPlay(this)"></video>
-              
-              <canvas height=0 class="videoMerge" id="gardenMerge"></canvas>
-            </div>
-            <div class="video-compare-container" id="masonDiv">
-              <video class="video" id="mason" loop playsinline autoPlay muted src="images/mason_stack.mp4" onplay="resizeAndPlay(this)"></video>
-              
-              <canvas height=0 class="videoMerge" id="masonMerge"></canvas>
-            </div>
-            <!-- <video id="teaser" autoplay muted loop playsinline width="40%">
-              <source src="assets/comparison_statue_nerf.mp4"
-                      type="video/mp4">
-            </video> -->
-      </div>
-      </div>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">BAGS</span> reconstructs scenes in high quality, and remove various image degradation.
-      </h2>
+<!-- Intro figure. -->
+ <div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <div class="introfig">
+      <img src="images/BAGS.jpg"
+             class="introfig"
+             alt="introfig"/>
     </div>
   </div>
-</section>
+</div>
 
-
-<!-- This will generate a gallery of videos -->
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop height="100%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop height="100%">
-            <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <div class="content has-text-justified">
+      <p style="text-align: center;">
+        We introduce Blur Agnostic Gaussian Splatting, or BAGS, a Splatting-based method that is robust against various types of blur.
+      </p>
     </div>
   </div>
-</section> -->
-
+</div>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -197,19 +200,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Recent efforts in using 3D Gaussian for scene reconstruction and novel view synthesis can achieve impressive results
-            on curated benchmarks; however, images captured in real life are often noisy. In this work, we analyze the robustness
-            of Gaussian-Splatting-based methods against various image degradation, such as motion blur, defocus blur, low resolution
-            , etc. Under these scenarios, Gaussian-Splatting-based methods overfit to degradation and produce worse results than
-            Neural-Radiance-Field-based methods. To address this issue, we propose Robust Gaussian Splatting (Robust-GS).
-            Robust-GS introduces additional 2D modeling capacities such that a 3D-consistent and high quality scene can be
-            reconstructed despite image-wise artifacts. Specifically, we model image degradation by estimating per-pixel convolution
-            kernels from a <b>Degradation Proposal Network (DPN)</b>. DPN is designed to consider spatial, color, and depth variations
-            of the scene to maximize modeling capacity. Additionally, DPN also proposes a quality-assessing mask, which indicates
-            observed regions where degradation occurs. Finally, we introduce a coarse-to-fine kernel optimization scheme;
-            this optimization scheme is fast and avoids sub-optimal solutions due to sparse point cloud initialization,
-            which often occurs when we apply Structure-from-Motion from noisy images. We demonstrate that Robust-GS achieves much more
-            photorealistic renderings under various challenging degradation conditions and significantly improves upon existing approaches.
+            Recent efforts in using 3D Gaussians for scene reconstruction and novel view synthesis can achieve impressive results on curated benchmarks; however, images captured in real life are often blurry. 
+            In this work, we analyze the robustness of Gaussian-Splatting-based methods against various image blur, such as motion blur, defocus blur, downscaling blur, etc. 
+            Under these degradations, Gaussian-Splatting-based methods tend to overfit and produce worse results than Neural-Radiance-Field-based methods. 
+            To address this issue, we propose Blur Agnostic Gaussian Splatting (BAGS). 
+            BAGS introduces additional 2D modeling capacities such that a 3D-consistent and high quality scene can be reconstructed despite image-wise blur. 
+            Specifically, we model blur by estimating per-pixel convolution kernels from a Blur Proposal Network (BPN). 
+            BPN is designed to consider spatial, color, and depth variations of the scene to maximize modeling capacity. 
+            Additionally, BPN also proposes a quality-assessing mask, which indicates regions where blur occur. 
+            Finally, we introduce a coarse-to-fine kernel optimization scheme; this optimization scheme is fast and avoids sub-optimal solutions due to a sparse point cloud initialization, which often occurs when we apply Structure-from-Motion on blurry images.
+            We demonstrate that BAGS achieves photorealistic renderings under various challenging blur conditions and imaging geometry, while significantly improving upon existing approaches.
           </p>
         </div>
       </div>
@@ -221,7 +221,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Pipeline</h2>
         <div class="pipeline">
-          <img src="https://nwang43jhu.github.io/BAGS/images/pipeline.png"
+          <img src="images/pipeline.jpg"
                  class="pipeline image"
                  alt="pipeline image"/>
           <!-- <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
@@ -234,10 +234,11 @@
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p>
-            BAGS is optimized by training a Blur Proposal Network on top of the scene over multiple scales. We extract features from color and depth,
-            which are concatenated with the position and view embedding to form the Multi-Modal Feature (MMF). The kernel MLP then estimates the per-pixel 
-            kernel and mask. We use the kernel to model the blur image and employ the mask to blend the rendered image and the blur-modeled image, 
-            yielding the output image. After multiple steps, we upscale image resolution and modify the kernel MLP to produce a kernel with a larger kernel size.
+            BAGS is optimized by training a <b><i>Blur Proposal Network (BPN)</i></b> on top of the scene over <b><i>multiple scales</i></b>. 
+            In BPN, we first extract features from color and depth, which are concatenated with the position and view embedding to form the Multi-Modal Feature (MMF). 
+            Then, the kernel MLP estimates the per-pixel kernel and mask. 
+            We use the kernel to model the blur image and employ the mask to blend the rendered image and the blur-modeled image, yielding the final output image. 
+            In terms of the coarse-to-fine optimization scheme, we upscale the image resolution after a certain steps and modify the kernel MLP to produce a kernel with a larger kernel size.
           </p>
         </div>
       </div>
@@ -250,14 +251,19 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">More results</h2>
+        <h2 class="title is-3">Additional Results</h2>
       </div>
     </div>
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p>
-            We show more results below.
+            We show additional results of BAGS on various datasets. 
+            In the first section, we provide some teasers for comparing BAGS with Mip-Splatting. Users can use the sliding bar to compare the results back and forth.
+            In the following sections, we show results on the real camera motion and defocus blur datasets provided by <a href="https://limacv.github.io/deblurnerf/">Deblur-NeRF</a>, 
+            and the results on the mix resolution dataset prepared by us, 
+            as well as the results on the unbounded drone dataset collected by us under motion blur with low-light noise.
+            
           </p>
         </div>
       </div>
@@ -265,142 +271,432 @@
   </div>
 </section>
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <h2 class="title is-3">Camera Motion Blur</h2>
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-blurgirl">
-          <video poster="" id="blurgirl" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/blurgirl.mp4"
-                    type="video/mp4">
-          </video>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="row">
+
+        <div class="col-md-8">
+          <div class="video-compare-container" id="decDiv">
+            <video class="video" id="dec" loop playsinline autoPlay muted src="images/dec_stack.mp4" onplay="resizeAndPlay(this)"></video>
+            <canvas class="videoMerge" id="decMerge"></canvas>
+          </div>
         </div>
-        <div class="item item-blurcozyroom">
-          <video poster="" id="blurcozyroom" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/blurcozyroom.mp4"
-                    type="video/mp4">
-          </video>
+
+        <div class="col-md-8">
+          <div class="video-compare-container" id="toolDiv">
+            <video class="video" id="tool" loop playsinline autoPlay muted src="images/tool_stack.mp4" onplay="resizeAndPlay(this)"></video>
+            <canvas class="videoMerge" id="toolMerge"></canvas>
+          </div>
         </div>
-        <div class="item item-blurdecoration">
-          <video poster="" id="blurdecoration" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/blurdecoration.mp4"
-                    type="video/mp4">
-          </video>
+
+        <div class="col-md-8">
+          <div class="video-compare-container" id="gardenDiv">
+            <video class="video" id="garden" loop playsinline autoPlay muted src="images/garden_stack.mp4" onplay="resizeAndPlay(this)"></video>
+            <canvas class="videoMerge" id="gardenMerge"></canvas>
+          </div>
         </div>
-        <div class="item item-blurbasket">
-          <video poster="" id="blurbasket" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/blurbasket.mp4"
-                    type="video/mp4">
-          </video>
+
+        <div class="col-md-8">
+          <div class="video-compare-container" id="masonDiv">
+            <video class="video" id="mason" loop playsinline autoPlay muted src="images/mason_stack.mp4" onplay="resizeAndPlay(this)"></video>
+            <canvas class="videoMerge" id="masonMerge"></canvas>
+          </div>
         </div>
-        <div class="item item-blurheron">
-          <video poster="" id="blurheron" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/blurheron.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blurpool">
-          <video poster="" id="blurpool" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/blurpool.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blurpuppet">
-          <video poster="" id="blurpuppet" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/blurpuppet.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blurstair">
-          <video poster="" id="blurstair" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/blurstair.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+
       </div>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">BAGS</span> reconstructs scenes in high quality, and remove various image degradation.
+      </h2>
     </div>
   </div>
 </section>
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <h2 class="title is-3">Defocus Blur</h2>
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-defocuscoral">
-          <video poster="" id="defocuscoral" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/defocuscoral.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-defocuscupcake">
-          <video poster="" id="defocuscupcake" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/defocuscupcake.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-defocusdaisy">
-          <video poster="" id="defocusdaisy" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/defocusdaisy.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-defocuscisco">
-          <video poster="" id="defocuscisco" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/defocuscisco.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-defocusseal">
-          <video poster="" id="defocusseal" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/defocusseal.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-defocustanabata">
-          <video poster="" id="defocustanabata" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/defocustanabata.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-defocustools">
-          <video poster="" id="defocustools" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/defocustools.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-defocuswine">
-          <video poster="" id="defocuswine" autoplay controls muted loop height="100%">
-            <source src="https://limacv.github.io/deblurnerf/images/defocuswine.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <h2 class="title is-3">Object Motion Blur</h2>
-    <div class="container">
-      <div class="item item-blur5grass1">
-        <video poster="" id="blur5grass1" autoplay controls muted loop height="100%">
-          <source src="https://limacv.github.io/deblurnerf/images/blur5grass1.mp4"
+<div class="hero-body">
+  <h2 class="title is-3">Camera Motion Blur</h2>
+  <div class="container">
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item item-blurgirl">
+        <video poster="" id="blurgirl" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/blurgirl.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-blurcozyroom">
+        <video poster="" id="blurcozyroom" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/blurcozyroom.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-blurdecoration">
+        <video poster="" id="blurdecoration" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/blurdecoration.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-blurbasket">
+        <video poster="" id="blurbasket" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/blurbasket.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-blurheron">
+        <video poster="" id="blurheron" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/blurheron.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-blurpool">
+        <video poster="" id="blurpool" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/blurpool.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-blurpuppet">
+        <video poster="" id="blurpuppet" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/blurpuppet.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-blurstair">
+        <video poster="" id="blurstair" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/blurstair.mp4"
                   type="video/mp4">
         </video>
       </div>
     </div>
   </div>
+</div>
 </section>
+
+<section class="hero is-light is-small">
+<div class="hero-body">
+  <h2 class="title is-3">Defocus Blur</h2>
+  <div class="container">
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item item-defocuscoral">
+        <video poster="" id="defocuscoral" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/defocuscoral.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-defocuscupcake">
+        <video poster="" id="defocuscupcake" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/defocuscupcake.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-defocusdaisy">
+        <video poster="" id="defocusdaisy" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/defocusdaisy.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-defocuscisco">
+        <video poster="" id="defocuscisco" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/defocuscisco.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-defocusseal">
+        <video poster="" id="defocusseal" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/defocusseal.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-defocustanabata">
+        <video poster="" id="defocustanabata" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/defocustanabata.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-defocustools">
+        <video poster="" id="defocustools" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/defocustools.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-defocuswine">
+        <video poster="" id="defocuswine" autoplay controls muted loop height="100%">
+          <source src="https://limacv.github.io/deblurnerf/images/defocuswine.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="hero is-light is-small">
+<div class="hero-body">
+  <h2 class="title is-3">Object Motion Blur</h2>
+  <div class="container">
+    <div class="item item-blur5grass1">
+      <video poster="" id="blur5grass1" autoplay controls muted loop height="100%">
+        <source src="https://limacv.github.io/deblurnerf/images/blur5grass1.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Deblurring at High Resolution</h2>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            While BAGS is a generalist approach and addresses multiple types of blur, it may become very expensive to estimate per-pixel convolution in high resolution. 
+            To this end, we have explored utilizing <a href="https://arxiv.org/abs/1609.05158">pixel shuffling</a> before we estimate blur kernel. 
+            This assumes that within a small region, blur kernel stays roughly consistent. 
+            Through this approach, we can scale to great visual results at 2K resolution on the Deblur-NeRF dataset.
+            Here, we provide visual comparisons between the results of BAGS at 0.6K and 2K resolution.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+ </section>
+
+ <section class="section">
+  <div class="container">
+    <div class="has-text-centered">
+      <div class="content has-text-justified">
+        <p></p>
+      </div>
+      
+      <div class="columns is-centered">
+        <!-- Row 1 -->
+        <div class="column">
+          <div id="example1" class="bal-container-small">
+            <div class="bal-after">
+              <img src="images/000_defocustools_ours_cut.png">
+              <div class="bal-afterPosition afterLabel" style="z-index:1;">2K</div>
+            </div>
+            <div class="bal-before" style="width:96.4968152866242%;">
+              <div class="bal-before-inset" style="width: 539px;">
+                <img src="images/000_defocustools_ours_4x_cut.png">
+                <div class="bal-beforePosition beforeLabel">0.6K</div>
+              </div>
+            </div>
+            <div class="bal-handle" style="left:96.4968152866242%;">
+              <span class="handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="column">
+          <div id="example2" class="bal-container-small">
+            <div class="bal-after">
+              <img src="images/002_defocuscaps_ours_cut.png">
+              <div class="bal-afterPosition afterLabel">2K</div>
+            </div>
+            <div class="bal-before" style="width: 50%;">
+              <div class="bal-before-inset" style="width: 539px;">
+                <img src="images/002_defocuscaps_ours_4x_cut.png">
+                <div class="bal-beforePosition beforeLabel">0.6K</div>
+              </div>
+            </div>
+            <div class="bal-handle" style="left: 50%;">
+              <span class="handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="column">
+          <div id="example4" class="bal-container-small">
+            <div class="bal-after">
+              <img src="images/001_defocusdaisy_ours_cut.png">
+              <div class="bal-afterPosition afterLabel" style="z-index:1;">2K</div>
+            </div>
+            <div class="bal-before" style="width:62.10191082802548%;">
+              <div class="bal-before-inset" style="width: 539px;">
+                <img src="images/001_defocusdaisy_ours_4x_cut.png">
+                <div class="bal-beforePosition beforeLabel">0.6K</div>
+              </div>
+            </div>
+            <div class="bal-handle" style="left:62.10191082802548%;">
+              <span class="handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="column">
+          <div id="example5" class="bal-container-small">
+            <div class="bal-after">
+              <img src="images/002_defocuscisco_ours_cut.png">
+              <div class="bal-afterPosition afterLabel" style="z-index:1;">2K</div>
+            </div>
+            <div class="bal-before" style="width:56.77179962894249%;">
+              <div class="bal-before-inset" style="width: 628px;">
+                <img src="images/002_defocuscisco_ours_4x_cut.png">
+                <div class="bal-beforePosition beforeLabel">0.6K</div>
+              </div>
+            </div>
+            <div class="bal-handle" style="left:56.77179962894249%;">
+              <span class="handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Row 2 -->
+      <div class="columns is-centered">
+        <div class="column">
+          <div id="example6" class="bal-container-small">
+            <div class="bal-after">
+              <img src="images/001_blurdecoration_ours_cut.png">
+              <div class="bal-afterPosition afterLabel" style="z-index:1;">2K</div>
+            </div>
+            <div class="bal-before" style="width:96.4968152866242%;">
+              <div class="bal-before-inset" style="width: 539px;">
+                <img src="images/001_blurdecoration_ours_4x_cut.png">
+                <div class="bal-beforePosition beforeLabel">0.6K</div>
+              </div>
+            </div>
+            <div class="bal-handle" style="left:96.4968152866242%;">
+              <span class="handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="column">
+          <div id="example7" class="bal-container-small">
+            <div class="bal-after">
+              <img src="images/002_blurcoffee_ours_cut.png">
+              <div class="bal-afterPosition afterLabel">2K</div>
+            </div>
+            <div class="bal-before" style="width: 50%;">
+              <div class="bal-before-inset" style="width: 539px;">
+                <img src="images/002_blurcoffee_ours_4x_cut.png">
+                <div class="bal-beforePosition beforeLabel">0.6K</div>
+              </div>
+            </div>
+            <div class="bal-handle" style="left: 50%;">
+              <span class="handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="column">
+          <div id="example8" class="bal-container-small">
+            <div class="bal-after">
+              <img src="images/006_blurpuppet_ours_cut.png">
+              <div class="bal-afterPosition afterLabel" style="z-index:1;">2K</div>
+            </div>
+            <div class="bal-before" style="width:96.4968152866242%;">
+              <div class="bal-before-inset" style="width: 539px;">
+                <img src="images/006_blurpuppet_ours_4x_cut.png">
+                <div class="bal-beforePosition beforeLabel">0.6K</div>
+              </div>
+            </div>
+            <div class="bal-handle" style="left:96.4968152866242%;">
+              <span class="handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="column">
+          <div id="example9" class="bal-container-small">
+            <div class="bal-after">
+              <img src="images/005_blurgirl_ours_cut.png">
+              <div class="bal-afterPosition afterLabel">2K</div>
+            </div>
+            <div class="bal-before" style="width: 50%;">
+              <div class="bal-before-inset" style="width: 539px;">
+                <img src="images/005_blurgirl_ours_4x_cut.png">
+                <div class="bal-beforePosition beforeLabel">0.6K</div>
+              </div>
+            </div>
+            <div class="bal-handle" style="left: 50%;">
+              <span class="handle-left-arrow"></span>
+              <span class="handle-right-arrow"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+ </section>
+
+<script>
+  new BeforeAfter({
+    id: '#example1'
+  });
+  new BeforeAfter({
+    id: '#example2'
+  });
+  new BeforeAfter({
+    id: '#example4'
+  });
+  new BeforeAfter({
+    id: '#example5'
+  });
+  new BeforeAfter({
+    id: '#example6'
+  });
+  new BeforeAfter({
+    id: '#example7'
+  });
+  new BeforeAfter({
+    id: '#example8'
+  });
+  new BeforeAfter({
+    id: '#example9'
+  });
+
+</script>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Kernel and Mask Visualization</h2>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            BAGS models image degradation through convolution kernels and masks. 
+            By constraining on its sparsity, the mask meaningfully highlights the regions of blur in an given training image.
+            When visualizing the kernels modeled at different pixel, we can also easily characterize the types of observed blur. 
+            Specifically, the estimated kernels in camera motion blur exhibit clear patterns of camera movement, while those for defocus blur show Gaussian-like distributions based on the pixel's distance from the focus plane. 
+            These self-emerged properties in BAGS provide ways for us to automatically and precisely evaluate the quality of training images.
+            Here, we provide additional visualizations of the kernels and masks estimated by BAGS.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+ </section>
+
+
+
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{peng2024bags,
-      title={BAGS: Blur Agnostic Gaussian Splatting through Multi-Scale Kernel Modeling}, 
-      author={Cheng Peng and Yutao Tang and Yifan Zhou and Nengyu Wang and Xijun Liu and Deming Li and Rama Chellappa},
+    <pre><code>@article{peng2024bags,
+      title={BAGS: Blur Agnostic Gaussian Splatting through Multi-Scale Kernel Modeling},
+      author={Peng, Cheng and Tang, Yutao and Zhou, Yifan and Wang, Nengyu and Liu, Xijun and Li, Deming and Chellappa, Rama},
+      journal={arXiv preprint arXiv:2403.04926},
       year={2024}
 }
 </code></pre>
