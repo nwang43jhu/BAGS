@@ -1,6 +1,6 @@
-# Robust-GS
+# BAGS
 
-This is the repository that contains source code for the [Robust-GS website](https://nwang43jhu.github.io/robustgs/).
+This is the repository that contains source code for the [BAGS website]().
 
 If you find it useful for your work please cite:
 ```
