@@ -1,14 +1,16 @@
-# BAGS
+# BAGS: Blur Agnostic Gaussian Splatting through Multi-Scale Kernel Modeling
 
 This is the repository that contains source code for the [BAGS website](https://nwang43jhu.github.io/BAGS/).
 
 If you find it useful for your work please cite:
 ```
-@article{ma2021deblur,
-      title   ={Deblur-NeRF: Neural Radiance Fields from Blurry Images},
-      author  ={Ma, Li and Li, Xiaoyu and Liao, Jing and Zhang, Qi and Wang, Xuan and Wang, Jue and Sander, Pedro V},
-      journal ={arXiv preprint arXiv:2111.14292},
-      year    ={2021}
+@misc{peng2024bags,
+      title={BAGS: Blur Agnostic Gaussian Splatting through Multi-Scale Kernel Modeling}, 
+      author={Cheng Peng and Yutao Tang and Yifan Zhou and Nengyu Wang and Xijun Liu and Deming Li and Rama Chellappa},
+      year={2024},
+      eprint={2403.04926},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 
