@@ -1,6 +1,6 @@
 # BAGS
 
-This is the repository that contains source code for the [BAGS website]().
+This is the repository that contains source code for the [BAGS website](https://nwang43jhu.github.io/BAGS/).
 
 If you find it useful for your work please cite:
 ```
