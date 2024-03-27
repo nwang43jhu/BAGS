@@ -270,10 +270,10 @@
         <div class="content has-text-justified">
           <p>
             We show additional results of BAGS on various datasets. 
-            In the first section, we provide some teasers for comparing BAGS with Mip-Splatting. Users can use the sliding bar to compare the results back and forth.
-            In the following sections, we show results on the real camera motion and defocus blur datasets provided by <a href="https://limacv.github.io/deblurnerf/">Deblur-NeRF</a>, 
+            In this section, we provide some teasers for comparing BAGS with Mip-Splatting. Users can use the sliding bar to compare the results back and forth.
+            <!-- In the following sections, we show results on the real camera motion and defocus blur datasets provided by <a href="https://limacv.github.io/deblurnerf/">Deblur-NeRF</a>, 
             and the results on the mix resolution dataset prepared by us, 
-            as well as the results on the unbounded drone dataset collected by us under motion blur with low-light noise.
+            as well as the results on the unbounded drone dataset collected by us under motion blur with low-light noise. -->
             
           </p>
         </div>
@@ -323,8 +323,10 @@
   </div>
 </section>
 
-
-<div class="hero-body">
+<!-- 先关起来，到时候看看怎么放更好
+现在的想法是因为这些视频也没有对比的baseline视频，所以看不太出来效果，而且放太多视频可能会很卡
+所以现在先把他们关起来，可能之后再放，并且每个种类的视频只放最好的几个，不用放太多 -->
+<!-- <div class="hero-body">
   <h2 class="title is-3">Camera Motion Blur</h2>
   <div class="container">
     <div id="results-carousel" class="carousel results-carousel">
@@ -447,7 +449,7 @@
 
 <section class="hero is-light is-small">
 <div class="hero-body">
-  <h2 class="title is-3">Mix resolution</h2>
+  <h2 class="title is-3">Mix Resolution</h2>
   <div class="container">
     <div id="results-carousel" class="carousel results-carousel">
       <div class="item item-defocuscoral">
@@ -511,7 +513,7 @@
 
 <section class="hero is-light is-small">
 <div class="hero-body">
-  <h2 class="title is-3">Unbounded drone</h2>
+  <h2 class="title is-3">Unbounded Drone</h2>
   <div class="container">
     <div id="results-carousel" class="carousel results-carousel">
       <div class="item item-defocuscoral">
@@ -571,7 +573,8 @@
     </div>
   </div>
 </div>
-</section>
+</section> -->
+
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -596,6 +599,23 @@
   </div>
  </section>
 
+
+ <!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="image-container">
+            <img src="images/kernel_mask_16.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
  <section class="section">
   <div class="container">
     <div class="has-text-centered">
@@ -606,7 +626,7 @@
       <div class="columns is-centered">
         <!-- Row 1 -->
         <div class="column">
-          <div id="example1" class="bal-container-small">
+          <!-- <div id="example1" class="bal-container-small">
             <div class="bal-after">
               <img src="images/000_defocustools_ours_cut.png">
               <div class="bal-afterPosition afterLabel" style="z-index:1;">2K</div>
@@ -621,7 +641,15 @@
               <span class="handle-left-arrow"></span>
               <span class="handle-right-arrow"></span>
             </div>
+          </div> -->
+
+          
+          <div id="example1" class="image-container">
+            <img src="images/002_defocuscaps_gt.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
           </div>
+
         </div>
  
         <div class="column">
@@ -644,26 +672,7 @@
         </div>
  
         <div class="column">
-          <div id="example4" class="bal-container-small">
-            <div class="bal-after">
-              <img src="images/001_defocusdaisy_ours_cut.png">
-              <div class="bal-afterPosition afterLabel" style="z-index:1;">2K</div>
-            </div>
-            <div class="bal-before" style="width:62.10191082802548%;">
-              <div class="bal-before-inset" style="width: 539px;">
-                <img src="images/001_defocusdaisy_ours_4x_cut.png">
-                <div class="bal-beforePosition beforeLabel">0.6K</div>
-              </div>
-            </div>
-            <div class="bal-handle" style="left:62.10191082802548%;">
-              <span class="handle-left-arrow"></span>
-              <span class="handle-right-arrow"></span>
-            </div>
-          </div>
-        </div>
- 
-        <div class="column">
-          <div id="example5" class="bal-container-small">
+          <!-- <div id="example4" class="bal-container-small">
             <div class="bal-after">
               <img src="images/002_defocuscisco_ours_cut.png">
               <div class="bal-afterPosition afterLabel" style="z-index:1;">2K</div>
@@ -678,6 +687,33 @@
               <span class="handle-left-arrow"></span>
               <span class="handle-right-arrow"></span>
             </div>
+          </div>
+        </div> -->
+
+        <div id="example4" class="image-container">
+          <img src="images/001_defocusdaisy_gt.jpg"
+               class="interpolation-image"
+               alt="Interpolate start reference image."/>
+        </div>
+
+      </div>
+
+
+      <div class="column">
+        <div id="example5" class="bal-container-small">
+          <div class="bal-after">
+            <img src="images/001_defocusdaisy_ours_cut.png">
+            <div class="bal-afterPosition afterLabel" style="z-index:1;">2K</div>
+          </div>
+          <div class="bal-before" style="width:62.10191082802548%;">
+            <div class="bal-before-inset" style="width: 539px;">
+              <img src="images/001_defocusdaisy_ours_4x_cut.png">
+              <div class="bal-beforePosition beforeLabel">0.6K</div>
+            </div>
+          </div>
+          <div class="bal-handle" style="left:62.10191082802548%;">
+            <span class="handle-left-arrow"></span>
+            <span class="handle-right-arrow"></span>
           </div>
         </div>
       </div>
