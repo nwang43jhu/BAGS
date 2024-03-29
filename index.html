@@ -27,8 +27,10 @@
   <script src="./static/js/script.js"></script>
 
   <link rel="stylesheet" href="./static/css/dics.original.css">
-  <script src="./static/js/event_handler.js"></script>
+  <!-- <script src="./static/js/event_handler.js"></script> -->
   <script src="./static/js/dics.original.js"></script>
+
+
 
   <style>
     .hero.teaser {
@@ -83,6 +85,36 @@
     }
   </style>
 
+<script>
+  document.addEventListener('DOMContentLoaded', domReady);
+
+      function domReady() {
+          new Dics({
+              container: document.querySelectorAll('.b-dics')[0],
+              hideTexts: false,
+              textPosition: "bottom"
+
+          });
+          new Dics({
+              container: document.querySelectorAll('.b-dics')[1],
+              hideTexts: false,
+              textPosition: "bottom"
+
+          });
+          new Dics({
+              container: document.querySelectorAll('.b-dics')[2],
+              hideTexts: false,
+              textPosition: "bottom"
+
+          });
+          new Dics({
+              container: document.querySelectorAll('.b-dics')[3],
+              hideTexts: false,
+              textPosition: "bottom"
+
+          });
+      }
+</script>
 </head>
 <body>
 
@@ -607,14 +639,14 @@
 
 
 
-<section class="section">
+<!-- <section class="section">
   <div class="container">
     <div class="has-text-centered">
       <div class="content has-text-justified">
         <p></p>
       </div>
 
-      <!-- Row 0 -->
+    
       <div class="columns is-centered">
         <div class="column">
           <div id="image1" class="image-container">
@@ -652,53 +684,20 @@
 
 
 
-
-      <!-- Row 1 -->
       <div class="columns is-centered">
- 
-        <div class="column">
-          <!-- <div id="example1" class="bal-container-small">
-            <div class="bal-after">
-              <img src="images/002_defocuscaps_ours_cut.png">
-              <div class="bal-afterPosition afterLabel">2K</div>
-            </div>
-            <div class="bal-before" style="width: 50%;">
-              <div class="bal-before-inset" style="width: 539px;">
-                <img src="images/002_defocuscaps_ours_4x_cut.png">
-                <div class="bal-beforePosition beforeLabel">0.6K</div>
-              </div>
-            </div>
-            <div class="bal-handle" style="left: 50%;">
-              <span class="handle-left-arrow"></span>
-              <span class="handle-right-arrow"></span>
-            </div>
-          </div> -->
 
-          <!-- <div class="b-dics">
-            <img src="images/002_defocuscaps_ours_4x_cut.png" alt="0.6K BAGS">
-            <img src="images/002_defocuscaps_ours_cut.png" alt="2K BAGS">
-            <img src="images/002_defocuscaps_pdrf_cut.png" alt="2K PDRF">
-          </div> -->
+        <div class="column">
+          
+          <div class="b-dics">
+            <img src="images/001_defocusdaisy_ours_4x_cut.png" alt="0.6K BAGS">
+            <img src="images/001_defocusdaisy_ours_cut.png" alt="2K BAGS">
+            <img src="images/001_defocusdaisy_pdrf_cut.png" alt="2K PDRF">
+          </div> 
 
         </div>
  
+ 
         <div class="column">
-          <!-- <div id="example2" class="bal-container-small">
-            <div class="bal-after">
-              <img src="images/001_defocusdaisy_ours_cut.png">
-              <div class="bal-afterPosition afterLabel" style="z-index:1;">2K</div>
-            </div>
-            <div class="bal-before" style="width:62.10191082802548%;">
-              <div class="bal-before-inset" style="width: 539px;">
-                <img src="images/001_defocusdaisy_ours_4x_cut.png">
-                <div class="bal-beforePosition beforeLabel">0.6K</div>
-              </div>
-            </div>
-            <div class="bal-handle" style="left:62.10191082802548%;">
-              <span class="handle-left-arrow"></span>
-              <span class="handle-right-arrow"></span>
-            </div>
-          </div> -->
           
           <div class="b-dics">
             <img src="images/001_defocusdaisy_ours_4x_cut.png" alt="0.6K BAGS">
@@ -708,181 +707,14 @@
 
         </div>
 
-        <div class="column">
-          <!-- <div id="example4" class="bal-container-small">
-            <div class="bal-after">
-              <img src="images/001_blurdecoration_ours_cut.png">
-              <div class="bal-afterPosition afterLabel" style="z-index:1;">2K</div>
-            </div>
-            <div class="bal-before" style="width:62.10191082802548%;">
-              <div class="bal-before-inset" style="width: 539px;">
-                <img src="images/001_blurdecoration_ours_4x_cut.png">
-                <div class="bal-beforePosition beforeLabel">0.6K</div>
-              </div>
-            </div>
-            <div class="bal-handle" style="left:62.10191082802548%;">
-              <span class="handle-left-arrow"></span>
-              <span class="handle-right-arrow"></span>
-            </div>
-          </div> -->
 
-          <div class="b-dics">
-            <img src="images/001_blurdecoration_ours_4x_cut.png" alt="0.6K BAGS">
-            <img src="images/001_blurdecoration_ours_cut.png" alt="2K BAGS">
-            <img src="images/001_blurdecoration_pdrf_cut.png" alt="2K PDRF">
-          </div>
-        
-        </div>
- 
-        <div class="column">
-          
-          <!-- <div id="example5" class="bal-container-small">
-            <div class="bal-after">
-              <img src="images/006_blurpuppet_ours_cut.png">
-              <div class="bal-afterPosition afterLabel" style="z-index:1;">2K</div>
-            </div>
-            <div class="bal-before" style="width:56.77179962894249%;">
-              <div class="bal-before-inset" style="width: 628px;">
-                <img src="images/006_blurpuppet_ours_4x_cut.png">
-                <div class="bal-beforePosition beforeLabel">0.6K</div>
-              </div>
-            </div>
-            <div class="bal-handle" style="left:56.77179962894249%;">
-              <span class="handle-left-arrow"></span>
-              <span class="handle-right-arrow"></span>
-            </div>
-          </div> -->
-
-          <div class="b-dics">
-            <img src="images/006_blurpuppet_ours_4x_cut.png" alt="0.6K BAGS">
-            <img src="images/006_blurpuppet_ours_cut.png" alt="2K BAGS">
-            <img src="images/006_blurpuppet_pdrf_cut.png" alt="2K PDRF">
-          </div>
-      
-      </div>
         </div>
       </div>
-      
-      <!-- Row 1.5
-      <div class="columns is-centered">
-        <div class="column">
-          <div id="image5" class="image-container">
-            <img src="images/002_defocuscaps_gt.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-          </div>
-        </div>
-          
-        <div class="column">
-          <div id="image6" class="image-container">
-            <img src="images/001_defocusdaisy_gt.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-          </div>
-        </div>
- 
-        <div class="column">
-          <div id="image7" class="image-container">
-            <img src="images/001_blurdecoration_gt.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-          </div>
-        </div>
- 
-        <div class="column">
-          <div id="image8" class="image-container">
-            <img src="images/006_blurpuppet_gt.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-          </div>
-        </div>
-
-      </div>
- 
-      Row 2
-      <div class="columns is-centered">
-        <div class="column">
-          <div id="example6" class="bal-container-small">
-            <div class="bal-after">
-              <img src="images/001_blurdecoration_ours_cut.png">
-              <div class="bal-afterPosition afterLabel" style="z-index:1;">2K</div>
-            </div>
-            <div class="bal-before" style="width:96.4968152866242%;">
-              <div class="bal-before-inset" style="width: 539px;">
-                <img src="images/001_blurdecoration_ours_4x_cut.png">
-                <div class="bal-beforePosition beforeLabel">0.6K</div>
-              </div>
-            </div>
-            <div class="bal-handle" style="left:96.4968152866242%;">
-              <span class="handle-left-arrow"></span>
-              <span class="handle-right-arrow"></span>
-            </div>
-          </div>
-        </div>
- 
-        <div class="column">
-          <div id="example7" class="bal-container-small">
-            <div class="bal-after">
-              <img src="images/002_blurcoffee_ours_cut.png">
-              <div class="bal-afterPosition afterLabel">2K</div>
-            </div>
-            <div class="bal-before" style="width: 50%;">
-              <div class="bal-before-inset" style="width: 539px;">
-                <img src="images/002_blurcoffee_ours_4x_cut.png">
-                <div class="bal-beforePosition beforeLabel">0.6K</div>
-              </div>
-            </div>
-            <div class="bal-handle" style="left: 50%;">
-              <span class="handle-left-arrow"></span>
-              <span class="handle-right-arrow"></span>
-            </div>
-          </div>
-        </div>
- 
-        <div class="column">
-          <div id="example8" class="bal-container-small">
-            <div class="bal-after">
-              <img src="images/006_blurpuppet_ours_cut.png">
-              <div class="bal-afterPosition afterLabel" style="z-index:1;">2K</div>
-            </div>
-            <div class="bal-before" style="width:96.4968152866242%;">
-              <div class="bal-before-inset" style="width: 539px;">
-                <img src="images/006_blurpuppet_ours_4x_cut.png">
-                <div class="bal-beforePosition beforeLabel">0.6K</div>
-              </div>
-            </div>
-            <div class="bal-handle" style="left:96.4968152866242%;">
-              <span class="handle-left-arrow"></span>
-              <span class="handle-right-arrow"></span>
-            </div>
-          </div>
-        </div>
- 
-        <div class="column">
-          <div id="example9" class="bal-container-small">
-            <div class="bal-after">
-              <img src="images/005_blurgirl_ours_cut.png">
-              <div class="bal-afterPosition afterLabel">2K</div>
-            </div>
-            <div class="bal-before" style="width: 50%;">
-              <div class="bal-before-inset" style="width: 539px;">
-                <img src="images/005_blurgirl_ours_4x_cut.png">
-                <div class="bal-beforePosition beforeLabel">0.6K</div>
-              </div>
-            </div>
-            <div class="bal-handle" style="left: 50%;">
-              <span class="handle-left-arrow"></span>
-              <span class="handle-right-arrow"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-       -->
     </div>
   </div>
- </section>
+ </section> -->
 
-<script>
+<!-- <script>
   new BeforeAfter({
     id: '#example1'
   });
@@ -908,7 +740,88 @@
     id: '#example9'
   });
 
-</script>
+</script> -->
+
+<section class="section">
+  <div class="container">
+    <div class="has-text-centered">
+      <div class="content has-text-justified">
+        <p></p>
+      </div>
+      
+      <!-- Row 1 -->
+      <div class="columns is-centered">
+        <div class="column">
+          <div id="image1" class="image-container">
+            <img src="images/002_defocuscaps_gt.jpg" class="interpolation-image" alt="Interpolate start reference image."/>
+          </div>
+        </div>
+        <div class="column">
+          <div id="image2" class="image-container">
+            <img src="images/001_defocusdaisy_gt.jpg" class="interpolation-image" alt="Interpolate start reference image."/>
+          </div>
+        </div>
+        <div class="column">
+          <div id="image3" class="image-container">
+            <img src="images/001_blurdecoration_gt.jpg" class="interpolation-image" alt="Interpolate start reference image."/>
+          </div>
+        </div>
+        <div class="column">
+          <div id="image4" class="image-container">
+            <img src="images/006_blurpuppet_gt.jpg" class="interpolation-image" alt="Interpolate start reference image."/>
+          </div>
+        </div>
+      </div>
+     
+      <!-- Row 2 -->
+      <div class="columns is-centered">
+
+        <div class="column">
+          <div class="content">
+            <div class="b-dics" style="width: 100%" >
+              <img src="images/001_defocusdaisy_ours_4x_cut.png" alt="0.6K BAGS">
+              <img src="images/001_defocusdaisy_ours_cut.png" alt="2K BAGS">
+              <img src="images/001_defocusdaisy_pdrf_cut.png" alt="2K PDRF">
+            </div>
+          </div>
+        </div>
+  
+        <div class="column">
+          <div class="content">
+            <div class="b-dics" style="width: 100%;" >
+              <img src="images/001_defocusdaisy_ours_4x_cut.png" alt="0.6K BAGS">
+              <img src="images/001_defocusdaisy_ours_cut.png" alt="2K BAGS">
+              <img src="images/001_defocusdaisy_pdrf_cut.png" alt="2K PDRF">
+            </div>
+          </div>
+        </div>
+  
+        <div class="column">
+          <div class="content">
+            <div class="b-dics" style="width: 100%;" >
+              <img src="images/001_blurdecoration_ours_4x_cut.png" alt="0.6K BAGS">
+              <img src="images/001_blurdecoration_ours_cut.png" alt="2K BAGS">
+              <img src="images/001_blurdecoration_pdrf_cut.png" alt="2K PDRF">
+            </div>
+          </div>
+        </div>
+  
+        <div class="column">
+          <div class="content">
+            <div class="b-dics" style="width: 100%;" >
+              <img src="images/001_blurdecoration_ours_4x_cut.png" alt="0.6K BAGS">
+              <img src="images/001_blurdecoration_ours_cut.png" alt="2K BAGS">
+              <img src="images/001_blurdecoration_pdrf_cut.png" alt="2K PDRF">
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      
+    </div>
+  </div>
+ </section>
+
 
 <section class="section">
   <div class="container is-max-desktop">
