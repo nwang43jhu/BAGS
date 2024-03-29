@@ -9,7 +9,9 @@
 }
 
 .b-dics__section {
-    height : 100%;
+    /* height : 100%; */
+    width: flex;
+    height: flex;
 }
 
 .b-dics__slider:hover :before {
